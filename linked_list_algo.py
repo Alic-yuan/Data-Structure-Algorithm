@@ -47,6 +47,9 @@ def merge_sorted_list(l1:Node, l2:Node) -> Optional[Node]:
 
 
 #删除倒数第n个节点。假设n大于0
+#典型的利用双指针法解题。首先让指针first指向头节点，然后让其向后移动n步，接着让指针sec指向头结点，并和first一起向后移动。
+# 当first的next指针为NULL时，sec即指向了要删除节点的前一个节点，接着让first指向的next指针指向要删除节点的下一个节点即可。
+# 注意如果要删除的节点是首节点，那么first向后移动结束时会为NULL，这样加一个判断其是否为NULL的条件，若为NULL则返回头结点的next指针。
 def remove_nth_from_end(head:Node, n:int) -> Optional[Node]:
     fast = head
     count = 0
